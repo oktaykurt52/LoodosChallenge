@@ -20,6 +20,11 @@ class HomeViewController: UIViewController {
         setupView()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        viewModel.onDidLayoutTasks()
+    }
+    
     // MARK: - Functions
     func setupView() {
         viewModel.setupRoot(on: self)

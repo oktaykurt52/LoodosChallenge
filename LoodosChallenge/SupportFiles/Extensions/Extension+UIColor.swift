@@ -28,8 +28,14 @@ extension UIColor {
     }
     
     internal enum Colors: String {
+        // Gradients
+        case searchBarTop = "#2A2A2A"
+        case searchBarBottom = "#151515"
+        // Defaults
         case background = "#000000"
         case splashTitle = "#E50000"
+        case viewTitle = "#FFFFFF"
+        case searchBarBackground = "#1E1E1E"
     }
     
     static var randomColor: UIColor {

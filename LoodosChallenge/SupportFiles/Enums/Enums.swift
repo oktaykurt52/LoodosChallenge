@@ -15,3 +15,7 @@ enum FontWeight: String {
     case Regular
     case Bold
 }
+
+enum CellIds: String {
+    case MovieCollectionViewCell
+}

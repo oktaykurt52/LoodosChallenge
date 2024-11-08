@@ -38,6 +38,19 @@
 		082A00FA2CDDFFEC00B789ED /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 082A00F92CDDFFEC00B789ED /* SnapKit */; };
 		082A00FF2CDE00D100B789ED /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082A00FE2CDE00CC00B789ED /* NetworkMonitor.swift */; };
 		082A01022CDE00F200B789ED /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082A01012CDE00F000B789ED /* Globals.swift */; };
+		0842C2972CDE2D660060DDFA /* Extension+CACornerMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C2962CDE2D5D0060DDFA /* Extension+CACornerMask.swift */; };
+		0842C2992CDE2EB40060DDFA /* Extension+CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C2982CDE2EAF0060DDFA /* Extension+CGPoint.swift */; };
+		0842C29B2CDE2F870060DDFA /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C29A2CDE2F840060DDFA /* Extension+UIButton.swift */; };
+		0842C29E2CDE30C50060DDFA /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0842C29C2CDE30C50060DDFA /* SF-Pro.ttf */; };
+		0842C2A12CDE31B80060DDFA /* Extension+Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C2A02CDE31B10060DDFA /* Extension+Notification.Name.swift */; };
+		0842C2A32CDE34960060DDFA /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C2A22CDE34910060DDFA /* MovieService.swift */; };
+		0842C2A62CDE35D90060DDFA /* ServiceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C2A52CDE35D70060DDFA /* ServiceModels.swift */; };
+		0842C2A92CDE38B40060DDFA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0842C2A82CDE38B40060DDFA /* Alamofire */; };
+		0842C2AB2CDE4A560060DDFA /* Extension+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C2AA2CDE4A520060DDFA /* Extension+UICollectionView.swift */; };
+		0842C2B02CDE4AC50060DDFA /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C2AF2CDE4AC50060DDFA /* MovieCollectionViewCell.swift */; };
+		0842C2B32CDE4AFD0060DDFA /* MovieDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C2B22CDE4AFA0060DDFA /* MovieDataSource.swift */; };
+		0842C2B62CDE525F0060DDFA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0842C2B52CDE525F0060DDFA /* SDWebImage */; };
+		0842C2B82CDE526C0060DDFA /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0842C2B72CDE52680060DDFA /* Extension+UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +75,17 @@
 		082A00F62CDDFE8500B789ED /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		082A00FE2CDE00CC00B789ED /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		082A01012CDE00F000B789ED /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		0842C2962CDE2D5D0060DDFA /* Extension+CACornerMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CACornerMask.swift"; sourceTree = "<group>"; };
+		0842C2982CDE2EAF0060DDFA /* Extension+CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CGPoint.swift"; sourceTree = "<group>"; };
+		0842C29A2CDE2F840060DDFA /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
+		0842C29C2CDE30C50060DDFA /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
+		0842C2A02CDE31B10060DDFA /* Extension+Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Notification.Name.swift"; sourceTree = "<group>"; };
+		0842C2A22CDE34910060DDFA /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		0842C2A52CDE35D70060DDFA /* ServiceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModels.swift; sourceTree = "<group>"; };
+		0842C2AA2CDE4A520060DDFA /* Extension+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionView.swift"; sourceTree = "<group>"; };
+		0842C2AF2CDE4AC50060DDFA /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		0842C2B22CDE4AFA0060DDFA /* MovieDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataSource.swift; sourceTree = "<group>"; };
+		0842C2B72CDE52680060DDFA /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		08E18EFE2CDDF634009CE090 /* LoodosChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoodosChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,6 +103,8 @@
 				082A00DD2CDDFC4300B789ED /* FirebaseCore in Frameworks */,
 				082A00DB2CDDFC4300B789ED /* FirebaseAuth in Frameworks */,
 				082A00E72CDDFC4300B789ED /* FirebasePerformance in Frameworks */,
+				0842C2A92CDE38B40060DDFA /* Alamofire in Frameworks */,
+				0842C2B62CDE525F0060DDFA /* SDWebImage in Frameworks */,
 				082A00E32CDDFC4300B789ED /* FirebaseFirestore in Frameworks */,
 				082A00FA2CDDFFEC00B789ED /* SnapKit in Frameworks */,
 			);
@@ -90,6 +116,8 @@
 		08100D9B2CDE0F8B008B5E45 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0842C2B12CDE4AF00060DDFA /* DataSource */,
+				0842C2AC2CDE4A980060DDFA /* Views */,
 				08100D9D2CDE0FA1008B5E45 /* ViewModel */,
 				08100D9C2CDE0F9C008B5E45 /* ViewController */,
 			);
@@ -126,6 +154,7 @@
 			children = (
 				08100DAC2CDE1813008B5E45 /* DrukTextWide-Bold.otf */,
 				08100DAD2CDE1813008B5E45 /* DrukWide-Bold.otf */,
+				0842C29C2CDE30C50060DDFA /* SF-Pro.ttf */,
 			);
 			path = SupportedFonts;
 			sourceTree = "<group>";
@@ -207,6 +236,12 @@
 		082A00ED2CDDFE0E00B789ED /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0842C2B72CDE52680060DDFA /* Extension+UIImageView.swift */,
+				0842C2AA2CDE4A520060DDFA /* Extension+UICollectionView.swift */,
+				0842C2A02CDE31B10060DDFA /* Extension+Notification.Name.swift */,
+				0842C29A2CDE2F840060DDFA /* Extension+UIButton.swift */,
+				0842C2982CDE2EAF0060DDFA /* Extension+CGPoint.swift */,
+				0842C2962CDE2D5D0060DDFA /* Extension+CACornerMask.swift */,
 				08100DB22CDE1B1D008B5E45 /* Extension+UIView.swift */,
 				08100DB02CDE18BC008B5E45 /* Extension+UIColor.swift */,
 				08100DAA2CDE11D7008B5E45 /* Extension+UILabel.swift */,
@@ -253,6 +288,8 @@
 		082A00FD2CDE00C600B789ED /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0842C2A42CDE35D00060DDFA /* Models */,
+				0842C2A22CDE34910060DDFA /* MovieService.swift */,
 				08100D992CDE0403008B5E45 /* FirebaseService.swift */,
 				082A00FE2CDE00CC00B789ED /* NetworkMonitor.swift */,
 			);
@@ -265,6 +302,38 @@
 				082A01012CDE00F000B789ED /* Globals.swift */,
 			);
 			path = Globals;
+			sourceTree = "<group>";
+		};
+		0842C2A42CDE35D00060DDFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0842C2A52CDE35D70060DDFA /* ServiceModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0842C2AC2CDE4A980060DDFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0842C2AD2CDE4A9E0060DDFA /* MovieCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0842C2AD2CDE4A9E0060DDFA /* MovieCell */ = {
+			isa = PBXGroup;
+			children = (
+				0842C2AF2CDE4AC50060DDFA /* MovieCollectionViewCell.swift */,
+			);
+			path = MovieCell;
+			sourceTree = "<group>";
+		};
+		0842C2B12CDE4AF00060DDFA /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0842C2B22CDE4AFA0060DDFA /* MovieDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		08E18EF52CDDF634009CE090 = {
@@ -311,6 +380,8 @@
 				082A00E82CDDFC4300B789ED /* FirebaseRemoteConfig */,
 				082A00EA2CDDFC4300B789ED /* FirebaseStorage */,
 				082A00F92CDDFFEC00B789ED /* SnapKit */,
+				0842C2A82CDE38B40060DDFA /* Alamofire */,
+				0842C2B52CDE525F0060DDFA /* SDWebImage */,
 			);
 			productName = LoodosChallenge;
 			productReference = 08E18EFE2CDDF634009CE090 /* LoodosChallenge.app */;
@@ -343,6 +414,8 @@
 			packageReferences = (
 				082A00D72CDDFC4300B789ED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				082A00F82CDDFFEC00B789ED /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0842C2A72CDE38B40060DDFA /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0842C2B42CDE525F0060DDFA /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 08E18EFF2CDDF634009CE090 /* Products */;
@@ -359,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0842C29E2CDE30C50060DDFA /* SF-Pro.ttf in Resources */,
 				082A00CB2CDDF8DA00B789ED /* Assets.xcassets in Resources */,
 				082A00CD2CDDF8DA00B789ED /* LaunchScreen.storyboard in Resources */,
 				082A00D62CDDFAC200B789ED /* GoogleService-Info.plist in Resources */,
@@ -376,19 +450,29 @@
 			files = (
 				08100DB32CDE1B24008B5E45 /* Extension+UIView.swift in Sources */,
 				08100DAB2CDE11DB008B5E45 /* Extension+UILabel.swift in Sources */,
+				0842C2992CDE2EB40060DDFA /* Extension+CGPoint.swift in Sources */,
 				08100DA52CDE10BC008B5E45 /* FontGenerator.swift in Sources */,
 				082A00F52CDDFE7200B789ED /* SplashViewController.swift in Sources */,
 				08100DA22CDE0FBB008B5E45 /* HomeViewModel.swift in Sources */,
+				0842C2A62CDE35D90060DDFA /* ServiceModels.swift in Sources */,
+				0842C2B82CDE526C0060DDFA /* Extension+UIImageView.swift in Sources */,
 				082A00EF2CDDFE1A00B789ED /* Extension+UIViewController.swift in Sources */,
 				082A01022CDE00F200B789ED /* Globals.swift in Sources */,
 				08100DA02CDE0FAF008B5E45 /* HomeViewController.swift in Sources */,
+				0842C2B02CDE4AC50060DDFA /* MovieCollectionViewCell.swift in Sources */,
+				0842C2B32CDE4AFD0060DDFA /* MovieDataSource.swift in Sources */,
+				0842C2972CDE2D660060DDFA /* Extension+CACornerMask.swift in Sources */,
 				082A00FF2CDE00D100B789ED /* NetworkMonitor.swift in Sources */,
 				08100DB72CDE1CD0008B5E45 /* LoadingIcon.swift in Sources */,
 				08100D9A2CDE0405008B5E45 /* FirebaseService.swift in Sources */,
+				0842C2AB2CDE4A560060DDFA /* Extension+UICollectionView.swift in Sources */,
+				0842C2A12CDE31B80060DDFA /* Extension+Notification.Name.swift in Sources */,
+				0842C2A32CDE34960060DDFA /* MovieService.swift in Sources */,
 				082A00CF2CDDF8DA00B789ED /* AppDelegate.swift in Sources */,
 				082A00F72CDDFE8800B789ED /* SplashViewModel.swift in Sources */,
 				08100DB12CDE18C0008B5E45 /* Extension+UIColor.swift in Sources */,
 				08100DA92CDE10E8008B5E45 /* Enums.swift in Sources */,
+				0842C29B2CDE2F870060DDFA /* Extension+UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +703,22 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		0842C2A72CDE38B40060DDFA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+		0842C2B42CDE525F0060DDFA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.20.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -676,6 +776,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 082A00F82CDDFFEC00B789ED /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		0842C2A82CDE38B40060DDFA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0842C2A72CDE38B40060DDFA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		0842C2B52CDE525F0060DDFA /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0842C2B42CDE525F0060DDFA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

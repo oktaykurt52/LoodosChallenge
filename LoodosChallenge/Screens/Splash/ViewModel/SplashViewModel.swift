@@ -50,7 +50,7 @@ class SplashViewModel {
                     try await service.remoteConfigService?.fetchConfig()
                     self.splashTitle.createTitle(customizableText: .init(text: currentSplashText, textColor: .init(color: .splashTitle), fontFamily: .DrukWide, fontWeight: .Bold, fontSize: 52, kern: -0.5))
                     self.splashTextStack.changeVisibility(alpha: 1.0, animated: true)
-                    try await Task.sleep(nanoseconds: 3_000_000_000) // Sleep for 3 seconds
+//                    try await Task.sleep(nanoseconds: 3_000_000_000) // Sleep for 3 seconds
                     self.loadingIcon.stopLoading()
                     self.splashView?.pushHome()
                 }
