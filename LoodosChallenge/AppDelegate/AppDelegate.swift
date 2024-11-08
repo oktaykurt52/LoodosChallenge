@@ -16,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setupFirebase()
+        setRootViewController()
         return true
+    }
+    
+    fileprivate func setRootViewController() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.overrideUserInterfaceStyle = .dark
+        let splashView: UIViewController = .createSlash()
+        self.window?.rootViewController = splashView
+        self.window?.makeKeyAndVisible()
     }
     
     fileprivate func setupFirebase() {
