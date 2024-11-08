@@ -6,30 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		082A00CB2CDDF8DA00B789ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082A00C22CDDF8DA00B789ED /* Assets.xcassets */; };
+		082A00CD2CDDF8DA00B789ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082A00C52CDDF8DA00B789ED /* LaunchScreen.storyboard */; };
+		082A00CF2CDDF8DA00B789ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082A00C12CDDF8DA00B789ED /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		082A00C12CDDF8DA00B789ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		082A00C22CDDF8DA00B789ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		082A00C32CDDF8DA00B789ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		082A00C42CDDF8DA00B789ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08E18EFE2CDDF634009CE090 /* LoodosChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoodosChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		08E18F102CDDF635009CE090 /* Exceptions for "LoodosChallenge" folder in "LoodosChallenge" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 08E18EFD2CDDF634009CE090 /* LoodosChallenge */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		08E18F002CDDF634009CE090 /* LoodosChallenge */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				08E18F102CDDF635009CE090 /* Exceptions for "LoodosChallenge" folder in "LoodosChallenge" target */,
-			);
-			path = LoodosChallenge;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		08E18EFB2CDDF634009CE090 /* Frameworks */ = {
@@ -42,10 +31,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082A00CA2CDDF8DA00B789ED /* LoodosChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				082A00D22CDDF95600B789ED /* Resources */,
+				082A00D42CDDF96300B789ED /* AppDelegate */,
+				082A00C32CDDF8DA00B789ED /* Info.plist */,
+				082A00C52CDDF8DA00B789ED /* LaunchScreen.storyboard */,
+			);
+			path = LoodosChallenge;
+			sourceTree = "<group>";
+		};
+		082A00D22CDDF95600B789ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				082A00D32CDDF95B00B789ED /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		082A00D32CDDF95B00B789ED /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				082A00C22CDDF8DA00B789ED /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		082A00D42CDDF96300B789ED /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				082A00C12CDDF8DA00B789ED /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 		08E18EF52CDDF634009CE090 = {
 			isa = PBXGroup;
 			children = (
-				08E18F002CDDF634009CE090 /* LoodosChallenge */,
+				082A00CA2CDDF8DA00B789ED /* LoodosChallenge */,
 				08E18EFF2CDDF634009CE090 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,9 +96,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				08E18F002CDDF634009CE090 /* LoodosChallenge */,
 			);
 			name = LoodosChallenge;
 			packageProductDependencies = (
@@ -122,6 +143,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082A00CB2CDDF8DA00B789ED /* Assets.xcassets in Resources */,
+				082A00CD2CDDF8DA00B789ED /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +155,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082A00CF2CDDF8DA00B789ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		082A00C52CDDF8DA00B789ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				082A00C42CDDF8DA00B789ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		08E18F122CDDF635009CE090 /* Debug */ = {
@@ -145,11 +180,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSQ8BQ5W8Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoodosChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -172,11 +207,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSQ8BQ5W8Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoodosChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
