@@ -16,6 +16,9 @@ enum FirebaseServiceError: Error {
 protocol RemoteConfigProtocol: AnyObject {
     func fetchConfig() async throws
 }
+protocol AnalyticsProtocol: AnyObject {
+    func logEvent(with eventName: String, optionalParameters: [String: Any]?)
+}
 
 class RemoteConfigService: RemoteConfigProtocol {
     
@@ -35,11 +38,20 @@ class RemoteConfigService: RemoteConfigProtocol {
     }
 }
 
+class AnalyticsService: AnalyticsProtocol {
+    
+    func logEvent(with eventName: String, optionalParameters: [String: Any]?) {
+        Analytics.logEvent(eventName, parameters: optionalParameters)
+    }
+}
+
 class FirebaseService {
     
     var remoteConfigService: RemoteConfigService?
+    var analyticsService: AnalyticsService?
     
-    init(remoteConfigService: RemoteConfigService? = nil) {
+    init(remoteConfigService: RemoteConfigService? = nil, analyticsService: AnalyticsService? = nil) {
         self.remoteConfigService = remoteConfigService
+        self.analyticsService = analyticsService
     }
 }

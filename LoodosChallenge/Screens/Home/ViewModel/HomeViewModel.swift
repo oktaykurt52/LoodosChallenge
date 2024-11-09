@@ -15,6 +15,12 @@ class HomeViewModel {
         case willHide
     }
     
+    lazy var tapGestureView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }()
+    
     lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .homeBackground
@@ -57,6 +63,7 @@ class HomeViewModel {
         collectionView.registerCells(cells: [
             .init(cellClass: MovieCollectionViewCell.self, reuseIdentifier: CellIds.MovieCollectionViewCell.rawValue)
         ])
+        collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.backgroundColor = .clear
         collectionView.delegate = movieDataSource
         collectionView.dataSource = movieDataSource
@@ -103,10 +110,11 @@ class HomeViewModel {
         viewController.view.backgroundColor = .init(color: .background)
         viewController.view.addSubview(backgroundImage)
         viewController.view.addSubview(viewTitle)
+        viewController.view.addSubview(emptyResultStack)
+        viewController.view.addSubview(tapGestureView)
         viewController.view.addSubview(bottomSearchView)
         bottomSearchView.addSubview(searchButton)
         bottomSearchView.addSubview(movieTextField)
-        viewController.view.addSubview(emptyResultStack)
         viewController.view.addSubview(collectionView)
         viewController.view.addSubview(activity)
         //...
@@ -130,6 +138,9 @@ class HomeViewModel {
             $0.left.equalToSuperview().inset(30)
             $0.right.equalTo(searchButton.snp.left).inset(-30)
         }
+        tapGestureView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
         collectionView.snp.makeConstraints {
             $0.top.equalTo(viewTitle.snp.bottom).inset(-30)
             $0.left.right.equalToSuperview()
@@ -152,9 +163,14 @@ class HomeViewModel {
             emptyResultStack.isHidden = true
             self.updateKeyboardUI(for: .willHide, with: notification)
         }
+        movieDataSource.movieHandler = { [weak self] movie in
+            guard let self = self else { return }
+            movieTextField.endEditing(true)
+            homeView?.presentMovieDetail(with: movie)
+        }
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
-        tapGesture.cancelsTouchesInView = true
-        viewController.view.addGestureRecognizer(tapGesture)
+        tapGesture.cancelsTouchesInView = false
+        tapGestureView.addGestureRecognizer(tapGesture)
     }
     
     func onDidLayoutTasks() {

@@ -32,6 +32,16 @@ extension UIViewController {
         }
     }
     
+    func presentMovieDetail(with movie: Movie?) {
+        DispatchQueue.main.async {
+            let movieDetail = MovieDetailViewController()
+            movieDetail.modalTransitionStyle = .coverVertical
+            movieDetail.modalPresentationStyle = .fullScreen
+            movieDetail.viewModel.bindedMovie = movie
+            self.present(movieDetail, animated: true)
+        }
+    }
+    
     typealias alertActionTypeEnum = (_ type: AlertActionType) -> ()
     func showAlert(title: String? = nil, message: String? = nil, actionTitle: String? = nil, completion: @escaping alertActionTypeEnum) {
         DispatchQueue.main.async {

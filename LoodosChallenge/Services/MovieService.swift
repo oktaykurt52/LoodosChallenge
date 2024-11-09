@@ -9,7 +9,9 @@ import Foundation
 import Alamofire
 
 enum MovieServiceError: Error {
+    case movieTitleNotFound
     case failedToFetchMovies(message: String)
+    case failedToFetchMovieDetail(message: String)
 }
 
 class MovieService {
@@ -31,5 +33,18 @@ class MovieService {
             throw MovieServiceError.failedToFetchMovies(message: "Failed to fetch movies for name: \(movieName) with error: \(searchResponse.error?.localizedDescription ?? "")")
         }
         return search
+    }
+    
+    func fetchMovieDetail(with movie: Movie) async throws -> MovieDetail {
+        guard let movieTitle = movie.title else {
+            throw MovieServiceError.movieTitleNotFound
+        }
+        let endPoint = Enpoint.movieDetail.generateEndpoint(with: movieTitle)
+        let movieResponse = await AF.request(endPoint).serializingDecodable(MovieDetail.self).response
+        // Handle AF error
+        guard let movie = movieResponse.value, movieResponse.error == nil else {
+            throw MovieServiceError.failedToFetchMovieDetail(message: "Failed to fetch movie details for movie: \(movieTitle) with error: \(movieResponse.error?.localizedDescription ?? "")")
+        }
+        return movie
     }
 }

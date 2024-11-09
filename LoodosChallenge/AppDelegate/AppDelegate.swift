@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         setupFirebase()
+        pushNotificationRequest(application)
         setRootViewController()
         return true
     }
@@ -30,5 +31,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     fileprivate func setupFirebase() {
         FirebaseApp.configure()
+    }
+    
+    fileprivate func pushNotificationRequest(_ application: UIApplication) {
+        Messaging.messaging().delegate = self
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.delegate = UIApplication.shared.delegate as? AppDelegate
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        notificationCenter.requestAuthorization(
+            options: authOptions,
+            completionHandler: { _, _ in
+                DispatchQueue.main.async {
+                    application.registerForRemoteNotifications()
+                }
+            }
+        )
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("Did receive token:", deviceToken)
+        Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("APNS token:", fcmToken ?? "")
     }
 }

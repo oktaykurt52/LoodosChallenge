@@ -9,7 +9,9 @@ import UIKit
 
 class MovieDataSource: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var bindedMovies: [Movie]? = [Movie]()
+    var bindedMovies: [Movie]? = nil
+    
+    var movieHandler: ((_ movie: Movie?) -> ())?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return bindedMovies?.count ?? .zero
@@ -19,6 +21,11 @@ class MovieDataSource: NSObject, UICollectionViewDelegate, UICollectionViewDataS
         guard let movieCell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIds.MovieCollectionViewCell.rawValue, for: indexPath) as? MovieCollectionViewCell else { return .init() }
         movieCell.prepareForDrawing(with: bindedMovies?[indexPath.row])
         return movieCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let handler = self.movieHandler else { return }
+        handler(bindedMovies?[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
