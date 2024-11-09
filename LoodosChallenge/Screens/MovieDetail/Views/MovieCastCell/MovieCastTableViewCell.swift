@@ -27,7 +27,6 @@ class MovieCastTableViewCell: UITableViewCell {
         stackView.spacing = 0
         stackView.alignment = .leading
         stackView.distribution = .fill
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
@@ -43,16 +42,12 @@ class MovieCastTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(textStack)
         textStack.snp.makeConstraints {
-            $0.left.equalToSuperview().offset(16)
-            $0.right.equalToSuperview().offset(-16)
-            $0.top.equalToSuperview().offset(16)
-            $0.bottom.equalToSuperview().offset(0)
+            $0.left.right.top.bottom.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16))
         }
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        //...
     }
     
     func prepareForDrawing(with movieDetail: MovieDetail?) {

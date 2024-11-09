@@ -38,6 +38,7 @@ extension UIColor {
         case searchBarBackground = "#1E1E1E"
         case movieDetail = "#A1A1A1"
         case movieDetailPlot = "#D4D4D4"
+        case textBorder = "#585858"
     }
     
     static var randomColor: UIColor {

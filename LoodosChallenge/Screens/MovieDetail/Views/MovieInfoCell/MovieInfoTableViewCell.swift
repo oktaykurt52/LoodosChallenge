@@ -36,13 +36,12 @@ class MovieInfoTableViewCell: UITableViewCell {
     
     lazy var movieSubtitleStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [
-            movieYear, movieAgeRating, movieDuration, movieHD
+            movieYear, createSeperator(), movieAgeRating, createSeperator(), movieDuration, createSeperator(), movieHD
         ])
         stack.axis = .horizontal
-        stack.spacing = 5
+        stack.spacing = -5
         stack.alignment = .center
-        stack.distribution = .fill
-        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .equalSpacing
         return stack
     }()
     
@@ -94,7 +93,8 @@ class MovieInfoTableViewCell: UITableViewCell {
             movieYear.createTitle(customizableText: .init(text: movieDetail.year ?? "", alignment: .left, textColor: .init(color: .viewTitle), fontFamily: .SFPro, fontWeight: .Regular, fontSize: 14))
             movieAgeRating.createTitle(customizableText: .init(text: movieDetail.rated ?? "", alignment: .left, textColor: .init(color: .movieDetail), fontFamily: .SFPro, fontWeight: .Regular, fontSize: 14))
             movieDuration.createTitle(customizableText: .init(text: movieDetail.runtime ?? "", alignment: .left, textColor: .init(color: .movieDetail), fontFamily: .SFPro, fontWeight: .Regular, fontSize: 14))
-            movieHD.createTitle(customizableText: .init(text: "HD", alignment: .left, textColor: .init(color: .movieDetail), fontFamily: .SFPro, fontWeight: .SemiBold, fontSize: 10))
+            movieHD.createTitle(customizableText: .init(text: " HD ", alignment: .left, textColor: .init(color: .movieDetail), fontFamily: .SFPro, fontWeight: .SemiBold, fontSize: 10))
+            movieHD.createView(properties: .init(borderColor: .init(color: .textBorder), borderWidth: 1.0, cornerRadius: 4))
             ratingText.createTitle(customizableText: .init(text: "IMDb Rating \(movieDetail.imdbRating ?? "0")/10", alignment: .left, textColor: .init(color: .viewTitle), fontFamily: .SFPro, fontWeight: .SemiBold, fontSize: 17))
             viewCount.createTitle(customizableText: .init(text: movieDetail.imdbVotes ?? "", alignment: .left, textColor: .init(color: .movieDetail), fontFamily: .SFPro, fontWeight: .SemiBold, fontSize: 10))
         }
@@ -116,5 +116,13 @@ class MovieInfoTableViewCell: UITableViewCell {
     func prepareForDrawing(with movieDetail: MovieDetail?) {
         createView(properties: .init(backgroundColor: .clear))
         bindedMovie = movieDetail
+    }
+    
+    private func createSeperator() -> UIView {
+        let view = UIView()
+        view.heightAnchor.constraint(equalToConstant: 2.5).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 2.5).isActive = true
+        view.createView(properties: .init(backgroundColor: .init(color: .movieDetail), cornerRadius: 1.25))
+        return view
     }
 }

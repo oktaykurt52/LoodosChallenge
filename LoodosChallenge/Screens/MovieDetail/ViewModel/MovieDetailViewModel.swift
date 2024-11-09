@@ -37,14 +37,13 @@ class MovieDetailViewModel {
             .init(cellClass: MovieCastTableViewCell.self, reuseIdentifier: CellIds.MovieCastTableViewCell.rawValue),
         ])
         tableView.backgroundColor = .clear
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 44
-        tableView.contentInsetAdjustmentBehavior = .never
         tableView.allowsSelection = false
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
         tableView.contentInset = .init(top: 0, left: 0, bottom: 170, right: 0)
-        tableView.delegate = movieDataSource
-        tableView.dataSource = movieDataSource
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
         return tableView
     }()
     
@@ -86,6 +85,8 @@ class MovieDetailViewModel {
                     "IMDb_vote_count": movieDetail.imdbVotes ?? ""
                 ])
                 movieDataSource.bindedMovieDetail = movieDetail
+                tableView.delegate = movieDataSource
+                tableView.dataSource = movieDataSource
                 tableView.reloadThreadSafe()
             } catch let error {
                 print("Error while fetching movie detail: \(error.localizedDescription)")

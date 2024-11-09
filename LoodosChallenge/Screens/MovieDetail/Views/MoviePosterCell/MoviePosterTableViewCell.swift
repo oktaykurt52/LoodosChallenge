@@ -25,15 +25,23 @@ class MoviePosterTableViewCell: UITableViewCell {
         }
     }
     
-    func prepareForDrawing(with movieDetail: MovieDetail?) {
-        createView(properties: .init(backgroundColor: .clear, cornerRadius: 10, maskedCorners: [
-            .topLeft, .topRight
-        ]))
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(moviePoster)
         //...
         moviePoster.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    func prepareForDrawing(with movieDetail: MovieDetail?) {
+        createView(properties: .init(backgroundColor: .clear, cornerRadius: 10, maskedCorners: [
+            .topLeft, .topRight
+        ]))
         bindedMovie = movieDetail
     }
 }

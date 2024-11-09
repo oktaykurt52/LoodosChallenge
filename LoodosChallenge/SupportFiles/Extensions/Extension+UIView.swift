@@ -11,12 +11,16 @@ extension UIView {
     
     internal struct Properties {
         let backgroundColor: UIColor
+        let borderColor: UIColor
+        let borderWidth: CGFloat
         let cornerRadius: CGFloat
         let maskedCorners: CACornerMask
         let clipsToBounds: Bool
         
-        init(backgroundColor: UIColor = .clear, cornerRadius: CGFloat = 0, maskedCorners: CACornerMask = [.topLeft, .topRight, .bottomLeft, .bottomRight], clipsToBounds: Bool = true) {
+        init(backgroundColor: UIColor = .clear, borderColor: UIColor = .clear, borderWidth: CGFloat = .zero, cornerRadius: CGFloat = .zero, maskedCorners: CACornerMask = [.topLeft, .topRight, .bottomLeft, .bottomRight], clipsToBounds: Bool = true) {
             self.backgroundColor = backgroundColor
+            self.borderColor = borderColor
+            self.borderWidth = borderWidth
             self.cornerRadius = cornerRadius
             self.maskedCorners = maskedCorners
             self.clipsToBounds = clipsToBounds
@@ -25,6 +29,8 @@ extension UIView {
     
     func createView(properties: Properties) {
         self.backgroundColor = properties.backgroundColor
+        self.layer.borderWidth = properties.borderWidth
+        self.layer.borderColor = properties.borderColor.cgColor
         self.layer.cornerRadius = properties.cornerRadius
         self.layer.maskedCorners = properties.maskedCorners
         self.clipsToBounds = properties.clipsToBounds

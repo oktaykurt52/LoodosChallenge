@@ -28,7 +28,7 @@ class MovieManageTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(actionButton)
+        contentView.addSubview(actionButton)
         actionButton.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 16, bottom: 0, right: 16))
         }

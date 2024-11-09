@@ -66,9 +66,6 @@ extension UILabel {
         let text = NSMutableAttributedString(string: customizableText.text, attributes: attributes)
         attributedText.append(text)
         self.adjustsFontSizeToFitWidth = customizableText.adjustFont
-        
-        DispatchQueue.main.async {
-            self.attributedText = attributedText
-        }
+        self.attributedText = attributedText
     }
 }

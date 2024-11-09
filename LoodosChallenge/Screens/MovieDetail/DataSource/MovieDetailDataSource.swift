@@ -50,35 +50,4 @@ class MovieDetailDataSource: NSObject, UITableViewDelegate, UITableViewDataSourc
             return castCell
         }
     }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 1000
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 200 //...
-//    }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let section = movieSections[indexPath.section]
-//        switch section.type {
-//        case .moviePoster:
-////            let width = tableView.bounds.width
-////            let calculatedHeight = width / 1.7916666667
-////            return calculatedHeight
-//            return UITableView.automaticDimension
-//        case .info:
-//            return UITableView.automaticDimension // 125
-//        case .manageMedia:
-//            return UITableView.automaticDimension
-//        case .plot:
-//            return UITableView.automaticDimension
-//        case .castAndDirector:
-//            return .zero
-//        }
-//    }
 }
