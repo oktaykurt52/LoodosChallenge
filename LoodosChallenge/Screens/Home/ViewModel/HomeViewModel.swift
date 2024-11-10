@@ -166,7 +166,12 @@ class HomeViewModel {
         movieDataSource.movieHandler = { [weak self] movie in
             guard let self = self else { return }
             movieTextField.endEditing(true)
-            homeView?.presentMovieDetail(with: movie)
+            guard movie?.type != .game else {
+                // "Game content". Detailed explanation at "TypeEnum" Movie object
+                self.homeView?.showAlert(title: "Selected content type is not a movie, serie or episode", message: "Please select another content for detailed information", actionTitle: "Ok", completion: { _ in })
+                return
+            }
+            self.homeView?.presentMovieDetail(with: movie)
         }
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         tapGesture.cancelsTouchesInView = false

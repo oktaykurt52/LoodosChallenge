@@ -39,9 +39,10 @@ class MovieInfoTableViewCell: UITableViewCell {
             movieYear, createSeperator(), movieAgeRating, createSeperator(), movieDuration, createSeperator(), movieHD
         ])
         stack.axis = .horizontal
-        stack.spacing = -5
+        stack.spacing = 5
         stack.alignment = .center
         stack.distribution = .equalSpacing
+        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -89,7 +90,7 @@ class MovieInfoTableViewCell: UITableViewCell {
     var bindedMovie: MovieDetail? {
         didSet {
             guard let movieDetail = bindedMovie else { return }
-            movieTitle.createTitle(customizableText: .init(text: movieDetail.title ?? "", alignment: .left, textColor: .init(color: .viewTitle), fontFamily: .SFPro, fontWeight: .Bold, fontSize: 20))
+            movieTitle.createTitle(customizableText: .init(text: movieDetail.title ?? "", alignment: .left, textColor: .init(color: .viewTitle), fontFamily: .SFPro, fontWeight: .Bold, fontSize: 20, lineBreakMode: .byTruncatingTail))
             movieYear.createTitle(customizableText: .init(text: movieDetail.year ?? "", alignment: .left, textColor: .init(color: .viewTitle), fontFamily: .SFPro, fontWeight: .Regular, fontSize: 14))
             movieAgeRating.createTitle(customizableText: .init(text: movieDetail.rated ?? "", alignment: .left, textColor: .init(color: .movieDetail), fontFamily: .SFPro, fontWeight: .Regular, fontSize: 14))
             movieDuration.createTitle(customizableText: .init(text: movieDetail.runtime ?? "", alignment: .left, textColor: .init(color: .movieDetail), fontFamily: .SFPro, fontWeight: .Regular, fontSize: 14))
@@ -104,7 +105,7 @@ class MovieInfoTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(movieDetailInfoStack)
         movieDetailInfoStack.snp.makeConstraints {
-            $0.left.top.bottom.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 16, bottom: 14, right: 0))
+            $0.left.right.top.bottom.equalToSuperview().inset(UIEdgeInsets(top: 16, left: 16, bottom: 14, right: 16))
         }
     }
     

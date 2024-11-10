@@ -33,11 +33,12 @@ struct Movie: Codable {
         case poster = "Poster"
     }
 }
-
+/// Important note: Some movie/serie titles like "Avatar" returning from service with "game" value like "Avatar: The Game". "game" key is not on documentation of OMBD api so added it for possible solutions for customized UI/UX for game objects
 enum TypeEnum: String, Codable {
     case movie = "movie"
     case series = "series"
     case episode = "episode"
+    case game = "game"
 }
 
 // MARK: - Movie
