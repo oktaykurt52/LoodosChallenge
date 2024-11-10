@@ -160,7 +160,6 @@ class HomeViewModel {
         notificationCenter.addObserver(forName: .keyboardWillHide, object: nil, queue: .main) { [weak self] notification in
             guard let self = self else { return }
             movieDataSource.bindedMovies == nil ? self.backgroundImage.changeVisibility(alpha: 1, animated: true): nil
-            emptyResultStack.isHidden = true
             self.updateKeyboardUI(for: .willHide, with: notification)
         }
         movieDataSource.movieHandler = { [weak self] movie in
