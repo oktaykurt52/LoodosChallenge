@@ -216,8 +216,10 @@ class HomeViewModel {
                 movieDataSource.bindedMovies = fetchedMovies
                 collectionView.reloadThreadSafe()
                 activity.stopAnimating()
+                movieTextField.endEditing(true)
             } catch {
                 activity.stopAnimating()
+                movieTextField.endEditing(true)
                 homeView?.showAlert(title: "Something went wrong", message: "Please make sure you have an internet connection and try again.", actionTitle: "Ok", completion: { _ in })
             }
         }

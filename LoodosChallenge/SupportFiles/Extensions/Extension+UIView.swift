@@ -114,4 +114,12 @@ extension UIView {
         }
         return borderLayers?.first as? CAGradientLayer
     }
+    
+    func createSeperator(color: UIColor = .init(color: .movieDetail), width: CGFloat = 2.5, height: CGFloat = 2.5, radius: CGFloat = 1.25) -> UIView {
+        let view = UIView()
+        view.heightAnchor.constraint(equalToConstant: height).isActive = true
+        view.widthAnchor.constraint(equalToConstant: width).isActive = true
+        view.createView(properties: .init(backgroundColor: color, cornerRadius: radius))
+        return view
+    }
 }

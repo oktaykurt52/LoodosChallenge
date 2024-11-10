@@ -14,6 +14,7 @@ class MovieDataSource: NSObject, UICollectionViewDelegate, UICollectionViewDataS
     var movieHandler: ((_ movie: Movie?) -> ())?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        collectionView.isUserInteractionEnabled = bindedMovies != nil
         return bindedMovies?.count ?? .zero
     }
     

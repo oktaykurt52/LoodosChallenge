@@ -118,12 +118,4 @@ class MovieInfoTableViewCell: UITableViewCell {
         createView(properties: .init(backgroundColor: .clear))
         bindedMovie = movieDetail
     }
-    
-    private func createSeperator() -> UIView {
-        let view = UIView()
-        view.heightAnchor.constraint(equalToConstant: 2.5).isActive = true
-        view.widthAnchor.constraint(equalToConstant: 2.5).isActive = true
-        view.createView(properties: .init(backgroundColor: .init(color: .movieDetail), cornerRadius: 1.25))
-        return view
-    }
 }
